@@ -1,0 +1,28 @@
+<header class="genre-index-header">
+  <h1>Genre<% if !@genre_id.nil? %><%= @genre_id %><% end %></h1>
+</header>
+
+<br>
+<!--Movie Items -->
+
+  <% @genres.each do |genre| %>
+    <% for movie in genre.movies %>
+      <article class="movie-index-article">
+
+        <!--Image-->
+        <div ="movie-index-img-wrapper">
+          <% movie.pictures.type("poster").each do |poster| %>
+          <% if poster.link_address.present? %>
+                <%= image_tag(poster.link_address) %>
+              <% end %>
+            </div>
+            <!--Title-->
+            <%= link_to movie.title, movie_path(movie) %>
+          <% end %>
+
+      </article>
+
+    <% end %>
+  <% end %>
+</main>
+<%= will_paginate %>

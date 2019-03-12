@@ -1,0 +1,23 @@
+<header class="director-index-header">
+  <h1>Listing Directors</h1>
+</header>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directors.each do |director| %>
+      <tr>
+        <td><%= link_to director.name, director_path(director) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

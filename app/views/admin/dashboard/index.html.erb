@@ -1,0 +1,21 @@
+<!--Begin Aside-->
+<%= render 'admin/partials/aside' %>
+    <!--Begin Admin Pannel Top-->
+    <div class="admin-pannel-item">
+      <!--image-->
+      <% if @user.image.present? %>
+        <%= image_tag(@user.image, :class => "user-image") %>
+      <% end %>
+      <!--username-->
+      <p class="welcome">welcome to the admin pannel:&nbsp;<%= @user.username %> </p>
+      <i class="material-icons md-18">query_builder</i>
+
+      <!--last_sign_in_at-->
+      <p class="last-sign-in">last log-in
+        <% if @user.last_sign_in_at.nil? %>
+          <%= @user.created_at.strftime("%A, %d %b %Y ") %>
+        <% else %>
+          <%= @user.last_sign_in_at.strftime("%A, %d %b %Y ") %>
+        <% end %>
+      </p>
+    </div>

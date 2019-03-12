@@ -1,0 +1,27 @@
+
+  <!--Begin Poster -->
+<header class="actor-show-header">
+  <div class="actor-show-image row-2">
+    <% @actor.pictures.each do |pic| %>
+      <%= image_tag(pic.link_address) %>
+    <% end %>
+  </div>
+    <div class="actor-show-info row-2">
+        <strong>Name:</strong>
+        <%= @actor.name %>
+
+        <table>
+          <thead>
+            <td>title</td>
+            <td>year</td>
+          </thead>
+          <tbody>
+        <% @actor_movies.each do |m| %>
+            <tr>
+              <td><%= m.title %></td>
+              <td><%= m.date %></td>
+            </tr>
+        <% end %>
+          </tbody>
+        </table>
+    </end>

@@ -1,0 +1,37 @@
+<%= render 'admin/partials/aside' %>
+<header class="admin article-index-header">
+  <h1>Listing Articles</h1>
+</header>
+
+<br>
+<main class="admin">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Published</th>
+        <th>Published at</th>
+        <th>Category</th>
+        <th>show</th>
+      <th>edit</th>
+      <th>delete</th>
+  </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, admin_article_path(article) %></td>
+        <td><%= truncate(article.content, length: 50) %></td>
+        <td><%= article.published %></td>
+        <td><%= article.published_at.strftime("%A, %y, %B, %Y") %></td>
+        <td><%= article.category_id %></td>
+        <td><%= link_to 'Show', admin_article_path(article), class: '' %></td>
+        <td><%= link_to 'Edit', edit_admin_article_path(article), class: '' %></td>
+        <td><%= link_to 'Delete', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: '' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</main>

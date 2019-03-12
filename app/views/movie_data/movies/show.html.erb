@@ -1,0 +1,79 @@
+
+  <!--Begin Poster -->
+<header class="movie-show-header">
+  <div class="movie-show-poster row-2">
+    <% @poster.each do |image| %>
+      <%= image_tag(image.link_address, class: "movie-show-image") %>
+    <% end %>
+  </div>
+
+  <!--Begin Movie info-->
+  <div class="movie-show-info row-2">
+
+    <h3 class="center"><%= @movie.title %></h3>
+
+    <p>
+      <strong>Release Date:</strong>
+      <%= @movie.date %>
+    </p>
+
+    <p>
+      <strong>Actor:</strong>
+      <% @actors.each do |actor| %>
+        <%= link_to actor.name, actor_path(actor) %>,
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Director:</strong>
+      <% @directors.each do |dir| %>
+        <%= link_to dir.name, director_path(dir) %>,
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Byline:</strong>
+      <%= @movie.byline %>
+    </p>
+
+    <p>
+      <strong>Genres:</strong>
+      <% @genres.each do |genre| %>
+        <%= link_to genre.name, genres_path(gen: genre) %>,
+      <% end %>
+    </p>
+  </div>
+</header>
+
+
+<main class="movie-show">
+
+    <!--Begin Iframe -->
+    <div class="iframe-wrapper">
+
+      <div class="aspect-ratio">
+          <iframe src="<%= @movie.iframe %>" frameborder="0" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+
+    </div>
+    <!--Begin Artwork -->
+    <div class="artwork-wrapper row-1">
+
+      <% @artwork.limit(6).each do |art| %>
+        <div class="artwork row-3">
+
+          <% unless art.link_address.nil? %>
+            <%= image_tag(art.link_address) %>
+          <% end %>
+
+        </div>
+      <% end %>
+    </div>
+  <br>
+
+</main>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %> |

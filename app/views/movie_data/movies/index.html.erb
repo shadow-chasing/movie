@@ -1,0 +1,23 @@
+<!--Main Begin-->
+<main>
+
+  <!--Movie Items -->
+  <% @movies.each do |movie| %>
+      <article class="movie-index-article">
+
+        <!--Image-->
+        <div ="movie-index-img-wrapper">
+          <% movie.pictures.type("poster").each do |poster| %>
+          <% if poster.link_address.present? %>
+                <%= image_tag(poster.link_address) %>
+              <% end %>
+            </div>
+            <!--Title-->
+            <%= link_to movie.title, movie_path(movie) %>
+          <% end %>
+
+      </article>
+
+  <% end %>
+</main>
+<%= will_paginate %>

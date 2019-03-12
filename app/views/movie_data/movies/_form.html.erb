@@ -1,0 +1,47 @@
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row-2">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+    <br>
+    <%= f.label :genre, "Genre - Comma seperated list."%><br>
+    <%= f.text_field :genre_list %>
+    <br>
+    <%= f.label :actor, " Actors - Comma seperated list."%><br>
+    <%= f.text_field :actor_list %>
+    <br>
+    <%= f.label :directors, " Directors - Comma seperated list."%><br>
+    <%= f.text_field :director_list %>
+    <br>
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+    <br>
+    <%= f.label :byline %><br>
+    <%= f.text_field :byline %>
+    <br>
+    <%= f.label :trailer%><br>
+    <%= f.text_field :iframe%>
+    <br>
+    <%= f.submit %>
+  </div>
+
+  <div class="field row-2">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  
+<% end %>

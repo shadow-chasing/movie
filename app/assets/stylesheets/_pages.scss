@@ -1,0 +1,146 @@
+//------------------------------------------------------------------------------
+// sign in
+//------------------------------------------------------------------------------
+//NOTE span 9 is for edit registration.
+.sign-in-wrapper{
+  padding: 0 2rem;
+  @include span(9);
+  @include breakpoint(large){
+    padding: 0 20rem;
+  }
+  @include breakpoint(medium){
+    padding: 0 10rem;
+  }
+}
+
+//------------------------------------------------------------------------------
+// pages welcome
+//------------------------------------------------------------------------------
+
+.hero{
+  height: $hero-height-xl;
+  @extend %flex-center-item;
+}
+
+.welcome-header {
+  background-image: image-url('/assets/ny.jpg');
+  @extend .hero-commons;
+}
+
+.article-show {
+  background-image: image-url('/assets/hoff.jpg');
+  @extend .hero-commons;
+}
+
+//------------------------------------------------------------------------------
+// pages about
+//------------------------------------------------------------------------------
+
+/* code for gallery show */
+
+//------------------------------------------------------------------------------
+// article index
+//------------------------------------------------------------------------------
+
+/* code for article index */
+
+//------------------------------------------------------------------------------
+// article show
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+// gallery index
+//------------------------------------------------------------------------------
+
+/* code for gallery index */
+
+//------------------------------------------------------------------------------
+// gallery show
+//------------------------------------------------------------------------------
+
+/* code for gallery show */
+
+//------------------------------------------------------------------------------
+// media index
+//------------------------------------------------------------------------------
+
+/* code for gallery index */
+
+//------------------------------------------------------------------------------
+// movie
+//------------------------------------------------------------------------------
+
+article.movie-index-article{
+  height: 22rem;
+  padding: .5rem;
+  text-align: center;
+}
+
+main.movie-show {
+
+}
+
+.actor-thumb{
+  height: 5em;
+  width: 5rem;
+}
+//------------------------------------------------------------------------------
+// movie show
+//------------------------------------------------------------------------------
+header.movie-show-header > .movie-show-poster{
+  margin: 1rem 0;
+  height: 100vh;
+}
+
+.movie-show-poster > .movie-show-image{
+  height: 80%;
+  @include box-sizing(border-box);
+  padding: 10% 15%;
+  margin-top: 2rem;
+}
+
+.movie-show-info.row2{
+
+}
+
+.movie-show-info > p{
+  font-weight: 300;
+}
+
+.iframe-wrapper{
+  height: 100vh;
+  background: color(greyscale-color, blackest);
+  @extend %flex-center-item;
+}
+
+
+.artwork-wrapper{
+  @include box-sizing(border-box);
+  background-color: color(greyscale-color, blackest);
+  height: 100vh;
+  margin-bottom: 4rem;
+}
+
+.artwork-wrapper > h2{
+  margin-bottom: 0;
+}
+
+.artwork-wrapper > .artwork{
+  margin: 2rem 0 0 0;
+  img{
+    border-radius: 1rem;
+  }
+}
+
+//------------------------------------------------------------------------------
+// blog index
+//------------------------------------------------------------------------------
+
+/* code for gallery index */
+
+//------------------------------------------------------------------------------
+// blog show
+//------------------------------------------------------------------------------
+
+/* code for gallery show */

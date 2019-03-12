@@ -1,0 +1,6 @@
+# remember
+character has a movie_name attribute
+
+actor.characters > needs a scope > where movie == @movie.id
+
+create scope in Character

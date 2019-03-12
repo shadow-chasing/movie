@@ -1,0 +1,23 @@
+<style>
+  .hero.article-show-image{
+    background-image: url("<%= @article.image %>");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<header class="article-show-header">
+  <div class="hero article-show-image">
+    <h1><%= @article.title %></h1>
+  </div>
+</header>
+
+<main class="article-show-main">
+  <div class="content">
+     <%= markdown(@article.content) %>
+  </div>
+</main>
+
+<div class="link-button link-button--info">
+  <%= link_to 'Back', articles_path(category: @article_category.first.name) %>
+</div>

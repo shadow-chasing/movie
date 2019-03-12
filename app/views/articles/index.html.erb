@@ -1,0 +1,15 @@
+<br>
+<main class="articles">
+  <% @articles.limit(2).each do |article| %>
+      <% if article.image.present? %>
+        <div class="row-2 center">
+            <%= image_tag(article.image, :class => "article-index-image") %>
+          <h3 class="center"><%= link_to article.title, article_path(article) -%></h3>
+            <div class="byline">
+              published: <%= article.published_at.strftime("%A, %y, %B, %Y")%>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+</main>
+<%= will_paginate @articles %>

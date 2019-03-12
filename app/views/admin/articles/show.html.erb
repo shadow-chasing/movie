@@ -1,0 +1,33 @@
+<div>
+  <dl class="row">
+    <dt class="col-sm-3">Title:</dt>
+    <dd class="col-sm-9"><%= @article.title %></dd>
+  </dl>
+  <dl class="row">
+    <dt class="col-sm-3">Image:</dt>
+    <dd class="col-sm-9"><%= @article.image %></dd>
+  </dl>
+  <dl class="row">
+    <dt class="col-sm-3">Content:</dt>
+    <dd class="col-sm-9"><%= @article.content %></dd>
+  </dl>
+  <dl class="row">
+    <dt class="col-sm-3">Published:</dt>
+    <dd class="col-sm-9"><%= @article.published %></dd>
+  </dl>
+  <dl class="row">
+    <dt class="col-sm-3">Published At:</dt>
+    <dd class="col-sm-9"><%= @article.published_at %></dd>
+  </dl>
+  <dl class="row">
+    <dt class="col-sm-3">Category:</dt>
+    <dd class="col-sm-9"><%= @article.category_id %></dd>
+  </dl>
+</div>
+
+<div class="link-button link-button--info">
+  <%= link_to 'Edit', edit_admin_article_path(@article) %>
+</div>
+<div class="link-button link-button--info">
+  <%= link_to 'Back', admin_articles_path %>
+</div>

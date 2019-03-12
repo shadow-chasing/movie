@@ -1,0 +1,60 @@
+//------------------------------------------------------------------------------
+// Container
+//------------------------------------------------------------------------------
+.container{
+  @include container;
+  margin-top: $nav-height-xl;
+}
+
+.container-admin{
+  @include container($admin);
+  margin-top: $nav-height-xl;
+}
+
+//------------------------------------------------------------------------------
+// Hero - base style
+//------------------------------------------------------------------------------
+.hero{
+  height: $hero-height-xl;
+  @extend %flex-center-item;
+}
+
+//------------------------------------------------------------------------------
+// boxes
+//------------------------------------------------------------------------------
+
+.row-1{
+  @include span(12);
+  @include box-sizing(border-box);
+}
+
+.row-2{
+  @include span(6);
+  @include box-sizing(border-box);
+}
+
+.row-3{
+  @include span(4);
+  @include box-sizing(border-box);
+}
+
+.row-4{
+  @include span(3);
+  @include box-sizing(border-box);
+}
+
+//------------------------------------------------------------------------------
+// alignment
+//------------------------------------------------------------------------------
+
+.center{
+  text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+.left{
+  text-align: left;
+}
